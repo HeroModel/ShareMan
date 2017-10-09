@@ -1,0 +1,315 @@
+//
+//  SharedManHeader.pch
+//  ShareMan
+//
+//  Created by apple on 2017/8/8.
+//  Copyright © 2017年 Apple. All rights reserved.
+//
+
+#ifndef SharedManHeader_pch
+#define SharedManHeader_pch
+   //登录
+//#import "LoginShareViewController.h"
+//#import "VerificationCodeViewController.h"
+//#import "LoginPageViewController.h"
+//#import "AddCodeViewController.h"
+//#import "MainLoginViewController.h"
+//#import "MainCodeViewController.h"
+//#import "LeftLoginViewController.h"
+//#import "LeftCodeViewController.h"
+
+ 
+ //            UIAlertAction * action = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+ //                NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+ //                if ([[UIApplication sharedApplication] canOpenURL:url]) {
+ //                    [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionUniversalLinksOnly : @NO} completionHandler:nil];
+ //                }
+ //            }];
+ 
+ 
+// NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableContainers error:nil];
+
+//#ifdef __IPHONE_11_0
+//if ([tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+//    if (@available(iOS 11.0, *)) {
+//        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    } else {
+//        // Fallback on earlier versions
+//    }
+//}
+//#endif
+
+//UIBarButtonItem * left = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav-icon-Return"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(didBack:)];
+//self.navigationItem.leftBarButtonItem = left;
+
+
+
+//[[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
+
+
+//if (string && [string length] != 0 && token && [token length] != 0) {
+//    
+//    RecyclingOrderViewController * recycVC = [[RecyclingOrderViewController alloc] init];
+//    GlobalNavigationController *navigationController = [[GlobalNavigationController alloc] initWithRootViewController:recycVC];
+//    self.frostedViewController.contentViewController = navigationController;
+//    [self.frostedViewController hideMenuViewController];
+//}else{
+//    
+//    LeftLoginViewController * shaVC = [[LeftLoginViewController alloc] init];
+//    GlobalNavigationController *navigationController = [[GlobalNavigationController alloc] initWithRootViewController:shaVC];
+//    self.frostedViewController.contentViewController = navigationController;
+//    [self.frostedViewController hideMenuViewController];
+//}
+
+
+//if (string && [string length] != 0 && token && [token length] != 0) {
+//    
+//    RecyclingOrderViewController * recycVC = [[RecyclingOrderViewController alloc] init];
+//    GlobalNavigationController *navigationController = [[GlobalNavigationController alloc] initWithRootViewController:recycVC];
+//    self.frostedViewController.contentViewController = navigationController;
+//    [self.frostedViewController hideMenuViewController];
+//}else{
+//    LeftLoginViewController * shaVC = [[LeftLoginViewController alloc] init];
+//    GlobalNavigationController *navigationController = [[GlobalNavigationController alloc] initWithRootViewController:shaVC];
+//    self.frostedViewController.contentViewController = navigationController;
+//    [self.frostedViewController hideMenuViewController];
+//}
+
+
+
+
+/** 三方工具类 */
+
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import <WMPageController.h>
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import <QuartzCore/QuartzCore.h>
+#import "SDCycleScrollView.h"//轮播图
+#import "AlipaySDK/AlipaySDK.h"//支付宝
+#import <WXApi.h>//微信
+#import "UMMobClick/MobClick.h"//友盟统计
+#import <AVFoundation/AVFoundation.h>//获取相机权限
+#import <Photos/PHPhotoLibrary.h>//获取相册权限
+#import <WebKit/WebKit.h>
+/** 自定义工具类 */
+#import "YWAlertView.h"//弹窗视图
+#import "YWStringAlertView.h"
+#import "UIBarButtonItem+YWExtension.h"
+#import "UINavigationController+GroundNav.h"
+#import "MQVerCodeInputView.h"
+#import "ShareTool.h"
+#import "UILabel+AlertActionFont.h"
+#import "UIBarButtonItem+GFBarButtonItem.h"
+#import "GlobalNavigationController.h"
+#import "UIButton+ButtonTool.h"
+#import "MBProgressShow.h"
+#import "NetTools.h"
+#import "SelectTypeView.h"
+#import "UIView+Line.h"
+#import "UITextField+TextString.h"
+#import "UITextView+TextViewString.h"
+#import "BackImageTableViewCell.h"//没有数据显示界面
+#import "AccountModel.h"//全局Model
+#import "LicensesView.h"//.电子协议
+#import "BackGroundCollectionViewCell.h"//没数据显示图样
+
+
+/** 版本号 */
+#define IOS10_LATER ([[[UIDevice currentDevice] systemVersion] compare:@"10.0"] != NSOrderedAscending )
+#define IOS8_LATER ([[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending )
+
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+
+
+
+
+
+#define Notification [NSNotificationCenter defaultCenter]
+#define UserDefaults [NSUserDefaults standardUserDefaults]
+
+#define FICAtion  @"paySuccess"
+
+
+#define WXAPPID @"wx27c6bc5e8c8f52f4"
+#define WXAPPSECE @"8cf7697091f918491c50efdafaf8b9ec"
+#define APPKey @"59aa55d3cae7e772430009fb"
+
+#define WS  __unsafe_unretained __typeof(self) weakSelf = self
+
+#define isValidString(string)               (string && [string isEqualToString:@""] == NO)
+
+
+
+#ifdef DEBUG
+
+#define TOKEN_TESTING @"7b8014d0f8bd9940148465775582914f"
+#define PHONE_TESTING @"13858164370"
+
+#define NSLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define PHONE_TESTING [UserDefaults objectForKey:@"phoneNumber"]
+#define TOKEN_TESTING [UserDefaults objectForKey:@"token"]
+#define NSLog(...)
+
+#endif
+
+
+/** 适配 */
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+
+/** 基于6s 计算屏幕宽高比 **/
+#define WIDTHFIT ([UIScreen mainScreen].bounds.size.width / 375.0f)
+#define HEIGHTFIT ([UIScreen mainScreen].bounds.size.height / 667.0f)
+
+
+#define SCREEN_WIDTH_FRAME  self.view.frame.size.width
+#define SCREEN_HEIGHT_FRAME  self.view.frame.size.height
+
+
+#define MEMORY @[@"16 G", @"32 G", @"64 G", @"128 G", @"256 G"]
+#define BAO @[@"有 保", @"过 保"]
+#define WAIKE @[@"外壳完好", @"外壳有划痕", @"外壳有磕碰/掉漆"]
+#define PINGMU @[@"屏幕无法显示", @"屏幕显示正常", @"屏幕有划痕", @"屏幕有缺角/碎裂/内屏损伤", @"亮坏点/色差/轻微发黄", @"色斑/漏液/错乱/严重老化"]
+#define WEIXIU @[@"屏幕维修", @"主板维修/多处拆修"]
+#define WENTI @[@"充电不正常", @"机身弯曲", @"触摸功能不正常", @"无法正常开机", @"通话不正常", @"拍照摄像不正常", @"机身进水或受潮", @"iCloud无法注销", @"指南针功能不正常"]
+
+/** 占位图 */ 
+#define PLACEHOLDER [UIImage imageNamed:@"zhanwei"]
+/** 头像占位图 */
+#define HEADER_PLACEHOLDER [UIImage imageNamed:@"sb-yellow-big"]
+/** 苹方常规字体，40px （黑 粗体)*/
+#define REG_TITLE_FONT [UIFont fontWithName:@"PingFangSC-Semibold" size:20 * WIDTHFIT]
+/** 苹方常规字体，40px （黑） */
+#define NAM_TITLE_FONT_M [UIFont fontWithName:@"PingFangSC-Regular" size:20 * WIDTHFIT]
+/** 苹方常规字体，24px （黑） */
+#define NAME_TIT_FONT [UIFont fontWithName:@"PingFangSC-Regular" size:12 * WIDTHFIT]
+/** 苹方常规字体，26px （黑） */
+#define TIT_FONT [UIFont fontWithName:@"PingFangSC-Regular" size:13 * WIDTHFIT]
+/** 苹方常规字体，30px （黑） */
+#define NAM_TITLE_FONT [UIFont fontWithName:@"PingFangSC-Regular" size:15 * WIDTHFIT]
+/** 苹方常规字体，30px （黑,常规） */
+#define NAV_TITLE_FONT_S [UIFont fontWithName:@"PingFangSC-Regular" size:17 * WIDTHFIT]
+/** 苹方常规字体，28px （黑） */
+#define NAM_TITLE [UIFont fontWithName:@"PingFangSC-Regular" size:14 * WIDTHFIT]
+/** 苹方常规字体，32px （黑） */
+#define NAM_TITLE_B [UIFont fontWithName:@"PingFangSC-Regular" size:16 * WIDTHFIT]
+/** 苹方常规字体，36px （黑,常规） */
+#define NAV_TITLE_N [UIFont fontWithName:@"PingFangSC-Regular" size:18 * WIDTHFIT]
+/** 苹方常规字体，44px （黑，粗） */
+#define NUMBER_TITLE_FONT [UIFont fontWithName:@"PingFangSC-Semibold" size:22 * WIDTHFIT]
+/** 苹方常规字体，80px （黑） */
+#define NUMBER_TITLE_T [UIFont fontWithName:@"PingFangSC-Regular" size:40 * WIDTHFIT]
+/** 苹方常规字体，22px （黑） */
+#define TIMER_TITLE_FONT [UIFont fontWithName:@"PingFangSC-Regular" size:11 * WIDTHFIT]
+
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define GLOBAL_COLOR  0xd8d8d8  //全局分割栏颜色（灰色）//
+#define GLOBAL_TITLE_COLOR  0x111111  //全局标题颜色（黑色）//
+#define GLOBAL_NUMBER_COLOR 0xf0f0f0   //全局数字字体颜色 (灰色↓)//
+#define GLOBAL_BACKGROUNDCOLOR_COLOR 0xffffff  //全局底色（白色）//
+#define GLOBAL_NAV_COLOR 0xf86151  //全局导航栏颜色（红色）//
+#define GLOBAL_SIGN_COLOR 0x999999  //签名字体颜色(灰色)//
+#define GLOBAL_PAGE_COLOR 0x666666  //我的主页字体颜色（我的）//
+#define GLOBAL_CITY_COLOR 0xbfbfbf  //城市字体颜色//
+#define GLOBAL_CONTEXT_COLOR 0x333333  //动态内容字体颜色//
+#define GLOBAL_NAME_COLOR 0x4a4d4f  //选择机型（黑色）//
+#define SIGN_COLOR 0xfc5555 //资料签名颜色//
+#define TITLE_COLOR 0xf29f7b //浅红色//
+#define RED_COLOR 0xfc5353 //红色//
+#define GR_COLOR 0xf8b551//按钮黄色//
+#define COLOR 0xc6c6cc //灰色 PLACEHOLDER
+#define BACK_COLOR 0xfafafa
+#define FONT_COLOR 0x437d69
+
+
+#define BaseURL @"https://www.hxx0571.com/shareman"
+
+#define URL @"https://www.hxx0571.com/image/"
+/** 支付宝 */
+#define Pay [BaseURL stringByAppendingString:@"/pay/getPayOrder"]//
+/** 获取验证码 */
+#define YANMA [BaseURL stringByAppendingString:@"/login/sendCode"]//登录验证/注册
+/** 验证码（登录） */
+#define DENGLU [BaseURL stringByAppendingString:@"/login/checkCode"]//注册、登录
+/** 新手机号申请验证码 */
+#define NEWPHONE [BaseURL stringByAppendingString:@"/user/updatePhoneNumberSendCode"]//
+/** 新手机号检测验证码 */
+#define NEWCODE [BaseURL stringByAppendingString:@"/user/updatePhoneNumberCheckCode"]//
+/** 共享手机分类 */
+#define FENLEI [BaseURL stringByAppendingString:@"/product/findShowByBrandId"]
+/** 身份信息 */
+#define SHENFEN [BaseURL stringByAppendingString:@"/user/uploadPersonalInfo"]
+/** 身份A */
+#define SHENFEN_A [BaseURL stringByAppendingString:@"/user/uploadIdCardA"]
+/** 身份B */
+#define SHENFEN_B [BaseURL stringByAppendingString:@"/user/uploadIdCardB"]
+/** 身份C */
+#define SHENFEN_C [BaseURL stringByAppendingString:@"/user/uploadIdCardOnHand"]
+/** 身份D */
+#define SHENFEN_D [BaseURL stringByAppendingString:@"/user/uploadStudentIdCard"]
+/** 选择系列 */
+#define XUANZE [BaseURL stringByAppendingString:@"/product/findShowByBrandId"]
+/** 选择手机型号 */
+#define XINGHAO [BaseURL stringByAppendingString:@"/product/findProductByVersion"]
+/** 申请中订单列表 */
+#define DINGDAN [BaseURL stringByAppendingString:@"/order/getOrder"]
+/** 查看个人信息 */
+#define CHAKAN [BaseURL stringByAppendingString:@"/user/getPersonalInfo"]
+/** 小报告 */
+#define REPORT [BaseURL stringByAppendingString:@"/advice/sendAdvice"]
+/** 删除地址 */
+#define DELETEADD [BaseURL stringByAppendingString:@"/postDetail/logicDeletePostDetail"]
+/** 添加地址 */
+#define ADDRESS [BaseURL stringByAppendingString:@"/postDetail/addPostDetail"]
+/** 获取地址 */
+#define GETADDRESS [BaseURL stringByAppendingString:@"/postDetail/getPostDetail"]
+/** 修改昵称 */
+#define NIKENAME [BaseURL stringByAppendingString:@"/user/updateNickname"]
+/** 修改性别 */
+#define GENDER [BaseURL stringByAppendingString:@"/user/updateGender"]
+/** 修改头像 */
+#define HEADER [BaseURL stringByAppendingString:@"/user/updatePortrait"]
+/** 上传签名 */
+#define AUTOGRAPH [BaseURL stringByAppendingString:@"/order/uploadSignature"]
+/** 售前声明 */
+#define PRESALE [BaseURL stringByAppendingString:@"/product/showClaim"]
+/** 意外保障服务 */
+#define SECURITY [BaseURL stringByAppendingString:@"/product/showInsurance"]
+/** 点击待支付 */
+#define PAYMENT [BaseURL stringByAppendingString:@"/order/getAgreement"]
+/** 取消订单 */
+#define ORDERDISMISS [BaseURL stringByAppendingString:@"/order/cancelOrders"]
+/** 删除订单 */
+#define DELETEORDER [BaseURL stringByAppendingString:@"/order/deleteOrders"]
+/** 查看个人资料 */
+#define CHECKMATERIAL [BaseURL stringByAppendingString:@"/user/getPersonalProfile"]
+/** 主页轮播图 */
+#define PHOTOIMAGE [BaseURL stringByAppendingString:@"/carousel/findCarousel"]
+/** 获取系统消息 */
+#define MESSAGE [BaseURL stringByAppendingString:@"/sysMsg/findMessage"]
+/** 主页促销管理 */
+#define PROMOTION [BaseURL stringByAppendingString:@"/category/findCategory"]
+/** 主页促销管理 */
+#define SPOT [BaseURL stringByAppendingString:@"/category/findHot"]
+/** 商品详情页 确认订单 */
+#define ORDER [BaseURL stringByAppendingString:@"/order/confirmOrder"]
+/** 获取芝麻信用和逾期记录结果 */
+#define CREDIT [BaseURL stringByAppendingString:@"/pay/getZhimaScoreResult"]
+/** 获取代金券 */
+#define TICKET [BaseURL stringByAppendingString:@"/voucher/findVoucher"]
+/** 选择代金券 */
+#define WITHTICKET [BaseURL stringByAppendingString:@"/voucher/selectVoucher"]
+/** 选择支付方式 */
+#define PAYWAY [BaseURL stringByAppendingString:@"/pay/selectPayWay"]
+#endif /* SharedManHeader_pch */
